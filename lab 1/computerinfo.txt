@@ -1,0 +1,10 @@
+1.1 MITS Altair 8800
+you input data into this with tape, casettes or floppy disks it seems. It output data with lights on the front of the computer. 256 bytes of RAM minimum or 64K max. The CPU was the intel 8080 which has a clock speed of 2.0 mhz. 
+1.2 MOS KIM-1
+The input for this was a built in hexadecimal keyboard, and the display was a 6 digital led display. Has a flat amount of 1024 bytes of ram. the processor was a MOS 6502 with a 1 MHz clock speed. 
+1.3 Apple 1
+i cant determine the input it just says no keyboard. but it had a monochrome display that could not display text. It had 4k of ram up to 64k total. the CPU was also a MOS 6502. 
+1.4 IBM Personal Computer (PC) 5150
+This computer has a keyboard! It also has a 5 inch display! fancy. It had 16k ram or 64k max. and a IBM proprietary processor that had a clock speed of 1.9 mhz. 
+1.5 Apple Macintosh
+Had a keyboard and a monitor once again. Looks like a modern computer much more than the others. It also runs on a GUI operating system. 128k ram and 512k max. the cpu was the Motorola 68000 with a speed of 7.83 MHz!

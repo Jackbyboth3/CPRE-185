@@ -1,0 +1,3 @@
+2. the expression would be from -128 to 0 to 128. when condensed to -1 to 0 to 1, it is divided by 128.
+3. this should be the same for the vertical axis as they have the same max and min.
+4. It is near zero i am assuming it should be but it could be stick drift or just wear of the controllers. 
