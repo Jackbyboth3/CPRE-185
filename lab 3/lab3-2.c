@@ -15,13 +15,13 @@ int main(void) {
     while (1) {
         scanf("%d,%d,%d,%d", &triangle, &x, &square, &circle);
 
-        
+        // Call the function to count pressed buttons
         int pressed = count_buttons(triangle, x, square, circle);
 
-        
+        // Print the number of buttons pressed
         printf("Buttons pressed: %d\n", pressed);
 
-        
+        // Flush the output buffer
         fflush(stdout);
     }
 
