@@ -22,7 +22,7 @@ int main() {
     printf("Waiting");
     startTime = 0;
     while (1) {
-        scanf(" %d,%lf, %lf, %lf", &t, &a, &b, &c);
+        scanf(" %d,%lf,%lf,%lf", &t, &a, &b, &c);
         
         fflush(stdout);
         
@@ -41,28 +41,28 @@ int main() {
     
     
     // Falling phase
-    
+    startTime = t;
     while (closeTo(0.15, 0, mag(a, b, c))) {
-        //scanf(" %d,%lf, %lf, %lf", &t,&a, &b, &c);
+        scanf(" %d,%lf, %lf, %lf", &t,&a, &b, &c);
         
         
             if (closeTo(25, 0 ,t % 10)) {
                 printf("!");
                
-                
-                //endTime = t;
             }
-            
-        endTime = t;
-        double fallTime = (endTime - startTime) / 1000.0;
-        double distance = 0.5 * 9.8 * fallTime * fallTime;
-        printf("\nOuch! I fell %.3f meters in %.3f seconds.\n", distance, fallTime);
-        break;
+            fflush(stdout);
+            endTime = t;
         
     }
+    double fallTime = (endTime - startTime) / 1000.0;
+    double distance = (0.5 * 9.8) * (fallTime * fallTime);
+    printf("\nOuch! I fell %.3f meters in %.3f seconds.\n", distance, fallTime);
     return 0;
+    
 }
-
+    
+       
+        
 // magnitude function
 double mag(double x, double y, double z) {
     return sqrt((x * x) + (y * y) + (z * z));
