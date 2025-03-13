@@ -65,7 +65,7 @@ int main() {
 
 // magnitude function
 double mag(double x, double y, double z) {
-    return sqrt(x * x + y * y + z * z);
+    return sqrt((x * x) + (y * y) + (z * z));
 }
 
 // Close to function
