@@ -32,7 +32,7 @@ void draw_maze(void);
 void draw_character(int x, int y, char use);
 float calc_roll(float x_mag);
 
-// Main function
+// main, use with ./ds4rd.exe -t -g -b
 int main(int argc, char* argv[])
 {
 	if (argc <2) {
@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
 	do {
 		if (first){
 			draw_character(curx, cury, AVATAR);
-			first =0;
+			first = 0 ;
 		}
 
 		scanf("%d, %lf, %lf, %lf, %d, %d, %d, %d", &t, &gx, &gy, &gz, &button_T, &button_C, &button_X, &button_S);
@@ -81,6 +81,7 @@ int main(int argc, char* argv[])
 		if (t % 10 == 0){
 			if (cury+1 >= 71) {
 				win = 1;
+				break;
 			}
 			else if (MAZE[cury+1][nextx] == EMPTY_SPACE){
 				draw_character(nextx, cury+1, AVATAR);
@@ -101,9 +102,15 @@ int main(int argc, char* argv[])
 				curx = nextx;
 				failCount=0;
 			}
-			else if (failCount == 5){
-				win = 0;
-			}
+			else {
+				failCount++;
+				if (failCount > 5 || // lose if surrounded and cannot move or if fail 5 times
+					(MAZE[cury + 1][curx] != EMPTY_SPACE && 
+					MAZE[cury][nextx] != EMPTY_SPACE &&
+					MAZE[cury + 1][nextx] != EMPTY_SPACE)) { 
+					win = 0;  
+					break;    
+				}
 		}
 
 	} while(cury <= 71);
@@ -155,12 +162,12 @@ int close_to(double tolerance, double point, double value){
 	}
 }
 
-// Placeholder for roll calculation (not used in this code)
+
 float calc_roll(float x_mag) {
 	return x_mag;
 }
 
-// Draw character at specific screen position
+// Draw character at specific screen position given in lab instructions
 void draw_character(int x, int y, char use)
 {
 	mvaddch(y, x, use);    
